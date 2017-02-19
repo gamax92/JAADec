@@ -49,13 +49,13 @@ class FIL extends Element implements Constants {
 		final int cpy = count;
 		final int pos = in.getPosition();
 
-		while(count>0) {
+		/*while(count>0) {
 			count = decodeExtensionPayload(in, count, prev, sf, sbrEnabled, smallFrames);
-		}
+		}*/
 
 		final int pos2 = in.getPosition()-pos;
 		final int bitsLeft = cpy-pos2;
-		if(bitsLeft>0) in.skipBits(pos2);
+		if(bitsLeft>0) in.skipBits(bitsLeft);
 		else if(bitsLeft<0) throw new AACException("FIL element overread: "+bitsLeft);
 	}
 
