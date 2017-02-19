@@ -119,7 +119,7 @@ public class AACAudioFileReader extends AudioFileReader {
 			in.mark(1000);
 			final AudioFileFormat aff = getAudioFileFormat(in, AudioSystem.NOT_SPECIFIED);
 			in.reset();
-			return new MP4AudioInputStream(in, aff.getFormat(), aff.getFrameLength());
+			return new AACAudioInputStream(in, aff.getFormat(), aff.getFrameLength());
 		}
 		catch(UnsupportedAudioFileException e) {
 			in.reset();
